@@ -21,9 +21,8 @@ public class EmployeeHandler {
     public ReportingStructure getDirectReports(String employeeId) {
         Set<String> directReportIds = new HashSet<>();
         Employee employee = employeeService.read(employeeId);
-        Optional<List<Employee>> directReports = Optional.ofNullable(employee.getDirectReports());
 
-        if(directReports.isPresent()) {
+        if(!CollectionUtils.isEmpty(employee.getDirectReports())) {
             getDirectReports(employee.getDirectReports(), directReportIds);
         }
 
