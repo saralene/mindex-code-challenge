@@ -1,8 +1,9 @@
 package com.mindex.challenge.data;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Employee {
+public class Employee implements Serializable {
     private String employeeId;
     private String firstName;
     private String lastName;
